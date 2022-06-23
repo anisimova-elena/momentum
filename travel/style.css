@@ -45,8 +45,8 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  background-image: url("assets/img/garrett-parker-DlkF4-dbCOU-unsplash 1.jpg");
-  background-position: 50% 0%;
+  background-image: url("assets/img/garrett-parker-DlkF4-dbCOU-unsplash 1.jpg"), url("assets/img/Rectangle 33.jpg") ;
+  background-position: top, bottom;
   background-repeat: no-repeat;
 }
 header{
@@ -99,4 +99,13 @@ header{
   border: none; 
   font: inherit;
   cursor: pointer;
+}
+.footer-container{
+  display: flex;
+  justify-content: space-between;
+  font-family: 'Red Hat Text';
+  color:#FFFFFF;
+}
+.footer-icons{
+  height: 33.65px;
 }
