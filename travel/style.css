@@ -1,37 +1,102 @@
-  @font-face {
-    font-family: 'Magra';
-    src: url("assets/fonts/Magra Bold 600.ttf");
-    font-weight: 600;
-  }
-  @font-face {
-    font-family: 'RedHatText';
-    src: url("assets/fonts/RedHatText-VariableFont_wght.ttf");
-  }
-  @font-face {
-    font-family: 'RedHatText';
-    src: url("assets/fonts/RedHatText-Italic-VariableFont_wght.ttf");
-    font-style: italic;
-  }
-  @font-face {
-    font-family: 'Aleo';
-    src: url("assets/fonts/Aleo-Regular.ttf");
-    font-weight: 400;
-  }
-  @font-face {
-    font-family: 'Aleo';
-    src: url("assets/fonts/Aleo-Italic.ttf");
-    font-weight: 400;
-    font-style: italic;
-  }
-  @font-face {
-    font-family: 'Aleo';
-    src: url("assets/fonts/Aleo-Bold.ttf");
-    font-weight: 700;
-  }
-  @font-face {
-    font-family: 'Aleo';
-    src: url("assets/fonts/Aleo-BoldItalic.ttf");
-    font-weight: 700;
-    font-style: italic;
-    
-  }
+@font-face {
+  font-family: 'Magra';
+  src: url("assets/fonts/Magra-Bold.ttf");
+  font-weight: 600;
+}
+@font-face {
+  font-family: 'Red Hat Text';
+  src: url("assets/fonts/RedHatText-VariableFont_wght.ttf");
+  font-weight: 500;
+}
+@font-face {
+  font-family: 'Red Hat Text';
+  src: url("assets/fonts/RedHatText-Italic-VariableFont_wght.ttf");
+  font-style: italic;
+}
+@font-face {
+  font-family: 'Aleo';
+  src: url("assets/fonts/Aleo-Regular.ttf");
+  font-weight: 400;
+}
+@font-face {
+  font-family: 'Aleo';
+  src: url("assets/fonts/Aleo-Italic.ttf");
+  font-weight: 400;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'Aleo';
+  src: url("assets/fonts/Aleo-Bold.ttf");
+  font-weight: 700;
+}
+@font-face {
+  font-family: 'Aleo';
+  src: url("assets/fonts/Aleo-BoldItalic.ttf");
+  font-weight: 700;
+  font-style: italic;
+  
+}
+html {
+  scroll-behavior: smooth; 
+}
+body {
+  min-height: 100vh;
+  margin: 0; padding: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-image: url("assets/img/garrett-parker-DlkF4-dbCOU-unsplash 1.jpg");
+  background-position: 50% 0%;
+  background-repeat: no-repeat;
+}
+header{
+  background: rgba(242, 120, 92, 0.7);
+  box-shadow: 0px 4px 4px rgba(13, 96, 111, 0.5);
+}
+.container{
+  max-width: 1200px;
+  margin: 25px auto;
+}
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  font-family: 'Red Hat Text';
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 21px;
+  color: #FFFFFF;
+}
+.logo {
+  font-family: 'Magra';
+  font-weight: 600;
+  font-size: 32px;
+  line-height: 39px;
+}
+.nav-list{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  list-style-type: none;
+}
+.nav-item{
+  height: 21px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+.nav-link{
+  color: #FFFFFF;
+  text-decoration: none;
+}
+
+.login-button{
+  width: 103px;
+  height: 41px;
+  background: #0D606F;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 2px 3px rgba(13, 96, 111, 0.16);
+  border-radius: 10px;
+  padding: 10px;
+  border: none; 
+  font: inherit;
+  cursor: pointer;
+}
