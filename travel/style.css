@@ -1,1 +1,37 @@
-/*Styles*/
+  @font-face {
+    font-family: 'Magra';
+    src: url("assets/fonts/Magra Bold 600.ttf");
+    font-weight: 600;
+  }
+  @font-face {
+    font-family: 'RedHatText';
+    src: url("assets/fonts/RedHatText-VariableFont_wght.ttf");
+  }
+  @font-face {
+    font-family: 'RedHatText';
+    src: url("assets/fonts/RedHatText-Italic-VariableFont_wght.ttf");
+    font-style: italic;
+  }
+  @font-face {
+    font-family: 'Aleo';
+    src: url("assets/fonts/Aleo-Regular.ttf");
+    font-weight: 400;
+  }
+  @font-face {
+    font-family: 'Aleo';
+    src: url("assets/fonts/Aleo-Italic.ttf");
+    font-weight: 400;
+    font-style: italic;
+  }
+  @font-face {
+    font-family: 'Aleo';
+    src: url("assets/fonts/Aleo-Bold.ttf");
+    font-weight: 700;
+  }
+  @font-face {
+    font-family: 'Aleo';
+    src: url("assets/fonts/Aleo-BoldItalic.ttf");
+    font-weight: 700;
+    font-style: italic;
+    
+  }
