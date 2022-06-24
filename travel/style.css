@@ -152,6 +152,28 @@ header{
 .search-input::-moz-placeholder { color: #F2785C; }
 .search-input::-webkit-input-placeholder {  color: #F2785C; }
 
+.steps {
+  margin-top: 334px;
+  text-align: center;
+}
+.section-title{
+  font-family: 'Red Hat Text';
+  font-size: 40px;
+  font-weight: 500;
+  text-transform: uppercase;
+  color: #F2785C;
+}
+.steps-list{
+  display: flex;
+  justify-content: space-between;
+  margin: 40px 11px 97px;
+}
+.steps-text{
+  font-family: 'Aleo';
+  font-weight: 400;
+  font-size: 20px;
+  color: #0D606F;
+}
 .footer-container{
   display: flex;
   justify-content: space-between;
