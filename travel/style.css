@@ -42,7 +42,7 @@ html {
 
 body {
   min-height: 100vh;
-  margin: 0; padding: 0;
+  margin: 0 auto; padding: 0;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -74,7 +74,7 @@ header{
 }
 .container{
   max-width: 1200px;
-  margin: 0px 120px;
+  margin: 0px auto;
 }
 
 .header-container {
@@ -118,11 +118,13 @@ header{
   height: 765px;
   color: #FFFFFF;
   background-image: url("assets/img/garrett-parker-DlkF4-dbCOU-unsplash 1.jpg");
+  background-position: center;
   background-repeat: no-repeat;
 }
 .preview-container{
   padding-top: 122px;
   width: 892px;
+  margin-left: 0;
 }
 .preview-title{
   display: inline;
@@ -201,16 +203,16 @@ header{
 }
 
 .slider{
-  margin-top: 46px;
+  margin: 46px auto 0;
 }
 .slider-wrapper{
   display: flex;
   justify-content: center;
   overflow: hidden;
   gap: 60px;
-  max-width: 1440px;
-  height: 800px;
 
+  height: 800px;
+  margin: 0 auto;
 }
 .slider-item img{
   width: 800px;
