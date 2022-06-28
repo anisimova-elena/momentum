@@ -210,13 +210,24 @@ header{
   justify-content: center;
   overflow: hidden;
   gap: 60px;
-
   height: 800px;
   margin: 0 auto;
+}
+.slider-item{
+  position: relative;
 }
 .slider-item img{
   width: 800px;
   border-radius: 16px;
+}
+.slider-text {
+  position: absolute;
+  bottom: 40px;
+  left: 15px;
+  font-family: 'Red Hat Text';
+  font-weight: 500;
+  font-size: 32px;  
+  text-transform: uppercase;
 }
 .control-buttons{
   margin: 24px auto 40px;
