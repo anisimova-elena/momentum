@@ -210,7 +210,7 @@ header{
 .steps-list{
   display: flex;
   justify-content: space-between;
-  margin: 40px 0 97px;
+  margin: 40px 11px 97px;
   width: 1177px;
 }
 .steps-text{
