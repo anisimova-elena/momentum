@@ -38,6 +38,9 @@
 html {
   scroll-behavior: smooth;
 }
+* {
+  box-sizing: border-box;
+}
 
 body {
   min-height: 100vh;
@@ -46,10 +49,8 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  background-image: url("assets/img/lake.jpg");
-  background-position: bottom;
-  background-repeat: no-repeat;
   color: #ffffff;
+  
 }
 button {
   appearance: none;
@@ -77,14 +78,19 @@ ul {
 a {
   text-decoration: none;
 }
+section {
+  box-sizing: content-box;
+  width: 100%;
+}
 header {
   background: rgba(242, 120, 92, 0.7);
   box-shadow: 0px 4px 4px rgba(13, 96, 111, 0.5);
   z-index: 1;
 }
 .container {
-  max-width: 1200px;
+  max-width: 1230px;
   margin: 0px auto;
+  padding: 0 15px;
 }
 
 .header-container {
@@ -92,7 +98,7 @@ header {
   height: 41px;
   display: flex;
   justify-content: space-between;
-  align-items: baseline;
+  align-items: center;
   font-family: "Red Hat Text";
   font-weight: 500;
   font-size: 16px;
@@ -102,17 +108,23 @@ header {
   font-family: "Magra";
   font-weight: 600;
   font-size: 32px;
+  white-space: nowrap;
+}
+nav{
+  flex-basis: 43%;
+  margin-left: 10px;
 }
 .nav-list {
   display: flex;
   justify-content: space-between;
   list-style-type: none;
-  column-gap: 42px;
-  margin: 0 196px 0 165px;
+  gap: 6%;
+  flex-wrap: wrap;
 }
 .nav-item {
   position: relative;
   height: 21px;
+  white-space: nowrap;
 }
 .nav-link {
   position: relative;
@@ -138,20 +150,21 @@ header {
 .login-button {
   width: 103px;
   height: 41px;
+  flex: 0 0 8%;
 }
 .preview {
   font-family: "Aleo";
   font-weight: 700;
   margin-top: -91px;
-  height: 765px;
+  height: min(765px, 100vh);
   color: #ffffff;
   background-image: url("assets/img/garrett-parker-DlkF4-dbCOU-unsplash 1.jpg");
-  background-position: center;
   background-repeat: no-repeat;
+  background-position: top;
 }
 .preview-container {
   padding-top: 122px;
-  width: 892px;
+  max-width: 892px;
   margin-left: 0;
 }
 .preview-title {
@@ -166,8 +179,6 @@ header {
 .search {
   display: flex;
   align-items: center;
-  width: 892px;
-  height: 95px;
   background: rgba(255, 255, 255, 0.7);
   border-radius: 16px;
 }
@@ -175,7 +186,7 @@ header {
   margin-left: 41px;
   border: none;
   outline: none;
-  width: 892px;
+  width: 68%;
   height: 95px;
   background: none;
   font-family: "Aleo";
@@ -183,12 +194,13 @@ header {
   font-weight: 400;
   font-size: 24px;
   color: #f2785c;
+  white-space: wrap;
 }
 .search-button {
   margin-right: 18px;
   border: none;
   outline: none;
-  min-width: 228px;
+  min-width: 19%;
   height: 59px;
   padding: 10px 32px;
   font-family: "Red Hat Text";
@@ -229,7 +241,6 @@ header {
   display: flex;
   justify-content: space-between;
   margin: 40px 11px 97px;
-  width: 1177px;
 }
 .steps-text {
   margin-top: 26px;
@@ -247,14 +258,13 @@ header {
   justify-content: center;
   overflow: hidden;
   gap: 60px;
-  height: 800px;
   margin: 0 auto;
 }
 .slider-item {
   position: relative;
 }
 .slider-item img {
-  width: 800px;
+  width: min(800px, 100vw - 15px);
   border-radius: 16px;
 }
 .slider-text {
@@ -306,10 +316,17 @@ header {
 
 .stories {
   padding-bottom: 41px;
-  background: rgba(255, 255, 255, 0.7);
+  background-size: cover;
   font-family: "Aleo";
   font-weight: 400;
   color: #0d606f;
+  background: rgba(255, 255, 255, 0.7);
+}
+.stories-background {
+  background-image: url("assets/img/lake.jpg");
+  background-repeat: no-repeat;
+  background-position: 0 172px;
+  background-size: cover;
 }
 .stories-list {
   display: flex;
@@ -320,9 +337,11 @@ header {
 }
 .stories-image {
   filter: drop-shadow(0px 4px 4px #0d606f);
+  flex: 0 0 33%;
+}
+.stories-image img {
+  max-width: 100%;
   border-radius: 16px;
-  width: 400px;
-  height: 250px;
 }
 .stories-title {
   font-weight: 400;
@@ -332,7 +351,10 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  column-gap: 40px;
+  gap: 3%;
+}
+.stories-text {
+  flex: 1 1 auto;
 }
 .story {
   margin-top: 24px;
@@ -368,4 +390,49 @@ header {
 }
 .footer-icons {
   height: 33.65px;
+}
+@media (max-width: 1200px) {
+  .story {
+    font-size: 19px;
+  }
+}
+@media (max-width: 1000px) {
+  .preview-title{
+    font-size: 70px;
+    
+  }
+}
+@media (max-width: 985px) {
+  .search-button {
+    font-size: 23px;
+  }
+  .stories-title {
+    font-size: 30px;
+  }
+  .story {
+    margin-top: 0;
+  }
+}
+@media (max-width: 896px) {
+  .story{
+    font-size: 17px;;
+  }
+  .search-button {
+    font-size: 20px;
+    padding: 9px 20px;
+  }
+  .steps-text {
+    font-size: 18px
+  }
+  .search-input {
+    font-size: 20px;
+  }
+}
+@media (max-width: 410px) {
+  .steps-text {
+    font-size: 17px;
+  }
+  .nav-link {
+    font-size: 15px
+  }
 }
