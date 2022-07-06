@@ -264,7 +264,7 @@ nav{
   position: relative;
 }
 .slider-item img {
-  width: min(800px, 100vw - 15px);
+  width: min(800px, 100vw - 55px);
   border-radius: 16px;
 }
 .slider-text {
@@ -422,7 +422,7 @@ nav{
     padding: 9px 20px;
   }
   .steps-text {
-    font-size: 18px
+    font-size: 18px;
   }
   .search-input {
     font-size: 20px;
@@ -433,6 +433,6 @@ nav{
     font-size: 17px;
   }
   .nav-link {
-    font-size: 15px
+    font-size: 15px;
   }
 }
