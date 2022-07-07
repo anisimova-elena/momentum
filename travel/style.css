@@ -605,6 +605,12 @@ nav{
     width: 10px;
     height: 10px;
   }
+  .stories-background {
+    background-position: 0 45px;
+  }
+  .stories {
+    padding-bottom: 13px;
+  }
   .stories-title {
     font-size: 11px;
   }
@@ -631,5 +637,13 @@ nav{
     -webkit-box-orient: vertical;
     line-height: 11px;
   }
-
+  .footer {
+    padding: 15px 0px 15px;
+  }
+  .footer-container {
+    justify-content: center;
+  }
+  .footer span {
+    display: none;
+  }  
 }
