@@ -470,18 +470,20 @@ nav{
     display: block;
   }
   .header{
-    background: none;
+    background: linear-gradient(180deg, #0D606F 0%, rgba(13, 96, 111, 0) 25.1%);
     box-shadow: none;
   }
   .header-container {
-    padding-top: 20px;
+    margin: 43px 0 0;
   }
   .nav-list, .login-button, .logo-text, .preview-title, .preview-text {
     display: none;
   }
   .preview {
+    margin-top: -85px;
     width: 100vw;
     height: 100%;
+    background-image: url(assets/img/mobile/header-background.jpg);
     background-size: cover;
   }
   .preview-container {
