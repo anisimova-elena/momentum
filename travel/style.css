@@ -368,14 +368,13 @@ nav{
 }
 .stories-image {
   filter: drop-shadow(0px 4px 4px #0d606f);
-  flex: 0 0 33%;
 }
 .stories-image img {
-  max-width: 100%;
+  width: 100%;
   border-radius: 16px;
 }
 .stories-title {
-  font-weight: 400;
+  font-weight: 700;
   font-size: 35px;
 }
 .stories-item {
@@ -385,18 +384,17 @@ nav{
   gap: 3%;
 }
 .stories-text {
-  flex: 1 1 auto;
+  flex: 1 1 67%;
+  font-size: 20px;
 }
 .story {
   margin-top: 24px;
   font-family: "Aleo";
   font-weight: 400;
-  font-size: 20px;
 }
 .read-full-stories {
   text-decoration: underline;
   font: inherit;
-  font-size: 20px;
   font-weight: 700;
   color: inherit;
 }
@@ -423,7 +421,7 @@ nav{
   height: 33.65px;
 }
 @media (max-width: 1200px) {
-  .story {
+  .stories-text {
     font-size: 19px;
   }
 }
@@ -440,12 +438,12 @@ nav{
   .stories-title {
     font-size: 30px;
   }
-  .story {
+  .stories-text {
     margin-top: 0;
   }
 }
 @media (max-width: 896px) {
-  .story{
+  .stories-text{
     font-size: 17px;;
   }
   .search-button {
@@ -607,4 +605,31 @@ nav{
     width: 10px;
     height: 10px;
   }
+  .stories-title {
+    font-size: 11px;
+  }
+  .stories-image {
+    width: 39.75vw;
+    height: 33.4vw;
+  }
+  .stories-list {
+    margin-top: 20px;
+    margin-bottom: 10px;
+    padding: 0 0;
+    row-gap: 15px;
+  }
+  .stories-text {
+    flex: 1 1 50%;
+    font-size: 9px;
+    padding-top: 5px;
+  }
+  .story {
+    margin-top: 10px;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 8;
+    -webkit-box-orient: vertical;
+    line-height: 11px;
+  }
+
 }
