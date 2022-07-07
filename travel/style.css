@@ -289,6 +289,9 @@ nav{
   gap: 60px;
   margin: 0 auto;
 }
+.slider-wrapper-mobile {
+  display: none;
+}
 .slider-item {
   position: relative;
 }
@@ -337,10 +340,9 @@ nav{
   background: #0d606f;
   color: #ffffff;
 }
-.more-button::before {
+.more-button svg{
   width: 40px;
   height: 40px;
-  content: url("assets/svg/arrow-right.svg");
 }
 
 .stories {
@@ -531,5 +533,78 @@ nav{
   }
   .steps-text {
     font-size: 10px;
+    margin-top: 20px;
+  }
+  .slider {
+    margin: 20px auto 0;
+  }
+  .slider-wrapper {
+    display: none;
+    margin-bottom: 10px;
+  }
+  .slider-wrapper-mobile {
+    display: block;
+    position: relative;
+    padding: 0 15px;
+    margin-bottom: 10px;
+  }
+  .slider-item-mobile {
+    position: relative;
+    margin: 0 auto;
+  }
+  .slider-item-mobile img{
+    border-radius: 16px;
+    width: calc(100vw - 30px);
+  }
+  .arrow-back, .arrow-next {
+    position: absolute;
+    top: 90px;
+    z-index: 5;
+  }
+  .arrow-back {
+    left: 26px;
+    opacity: 0.5;
+  }
+  .arrow-next {
+    transform: scale(-1, 1);
+    right: 26px;
+  }
+  .arrow-next svg{
+    fill-opacity: 1;
+  }
+  .slider-text-mobile {
+    position: absolute;
+    top: 8px;
+    left: 15px;
+    font-family: "Red Hat Text";
+    font-weight: 500;
+    font-size: 20px;
+    text-transform: uppercase;
+  }
+  .control-buttons {
+    position: absolute;
+    bottom: 12px;
+    left: calc(50% - 18px);
+    width: 36px;
+    height: 8px;
+    margin: 0 auto 0;
+  }
+  .control-buttons .circle:first-child {
+    background: #F2785C;
+  }
+  .circle {
+    width: 8px;
+    height: 8px;
+  }
+  .more-button {
+    padding: 7.5px 12px;
+    gap: 6px;
+    min-width: 92px;
+    height: 30px;
+    font-size: 11px;
+  }
+  .more-button svg {
+    width: 10px;
+    height: 10px;
   }
 }
