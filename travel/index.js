@@ -1,4 +1,4 @@
-console.log("Моя оценка 100: \n Я считаю практически все пункты выполнены, можно сделать замечания к header и секция steps.\n Но, в блоке Особенности проверки вёрстки на соответствие макету указано что приветствуется правка кривонарисованных блоков :) \n Интерактивность - при наведении на меню, оно плавно подчёркивается \n");
+console.log("Моя оценка: 100\n Discord: fvtnbcn#9419 \nElena (@anisimova-elena)");
 const menu = document.querySelector('.mobile-nav');
 const menuBtn = document.querySelector('.menu-icon');
 const mask =  document.querySelector('.mask-content');
