@@ -8,9 +8,16 @@ const body = document.body;
 if (menu && menuBtn) {
     menuBtn.addEventListener('click', () => {
         menu.classList.toggle('active');
-        menuBtn.classList.toggle('active');
         mask.classList.toggle('active');
+        menuBtn.classList.toggle('active');        
     });
+    menu.querySelectorAll('a'). forEach(link => {
+        link.addEventListener('click', () => {
+            menu.classList.remove('active');
+            mask.classList.remove('active');
+            menuBtn.classList.remove('active');
+        })
+    })
     mask.addEventListener('click', () => {
         menu.classList.remove('active');
         mask.classList.remove('active');
@@ -18,7 +25,7 @@ if (menu && menuBtn) {
     })
     exitBtn.addEventListener('click', () => {
         menu.classList.remove('active');
-        menuBtn.classList.remove('active');
         mask.classList.remove('active');
+        menuBtn.classList.remove('active');
     })
 }

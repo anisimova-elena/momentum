@@ -65,10 +65,10 @@
               <a class="nav-link" href="#stories">Travel Stories</a>
             </li>
             <li class="nav-item">
-              <a href="" class="nav-link">Account</a>
+              <a href="#" class="nav-link">Account</a>
             </li>
             <li class="nav-item">
-              <a href="" class="nav-link">Social Media</a>
+              <a href="#footer" class="nav-link">Social Media</a>
             </li>
           </ul>
         </nav>
@@ -80,7 +80,8 @@
         <div class="container">
           <div class="preview-container">
             <h1 class="preview-title" id="preview">
-              Explore the beauty of the World
+              Explore the beauty of <br />
+              the World
             </h1>
             <p class="preview-text">
               Receive personalized recommendations for countries, hotels,
@@ -122,20 +123,6 @@
         <h2 class="section-title" id="destinations">Popular Destinations</h2>
         <div class="slider">
           <div class="slider-wrapper">
-            <div class="slider-item">
-              <img src="assets/img/slider-spain.jpg" alt="Spain" />
-              <div class="slider-text">Spain</div>
-            </div>
-            <div class="slider-item">
-              <img src="assets/img/slider-japan.jpg" alt="Japan" />
-              <div class="slider-text">Japan</div>
-            </div>
-            <div class="slider-item">
-              <img src="assets/img/slider-usa.jpg" alt="USA" />
-              <div class="slider-text">USA</div>
-            </div>
-          </div>
-          <div class="slider-wrapper-mobile">
             <div class="arrow-back">
               <svg
                 width="15"
@@ -149,13 +136,39 @@
                   fill="#F2785C"
                 />
               </svg>
+            </div>             
+            <div class="slider-item active">
+              <picture>
+                <source
+                  srcset="assets/img/mobile/slider-spain.jpg"
+                  media="(max-width: 390px)"
+                />
+                <source srcset="assets/img/slider-spain.jpg" />
+                <img srcset="slider-spain.jpg" alt="Spain" />
+              </picture>
+              <div class="slider-text">Spain</div>
             </div>
-            <div class="slider-item-mobile">
-              <img
-                src="assets/img/mobile/slider-spain-mobile.jpg"
-                alt="Spain"
-              />
-              <div class="slider-text-mobile">Spain</div>
+            <div class="slider-item next">
+              <picture>
+                <source
+                  srcset="assets/img/mobile/slider-japan.jpg"
+                  media="(max-width: 390px)"
+                />
+                <source srcset="assets/img/slider-japan.jpg" />
+                <img srcset="slider-japan.jpg" alt="Japan" />
+              </picture>
+              <div class="slider-text">Japan</div>
+            </div>
+            <div class="slider-item">
+              <picture>
+                <source
+                  srcset="assets/img/mobile/slider-usa.jpg"
+                  media="(max-width: 390px)"
+                />
+                <source srcset="assets/img/slider-usa.jpg" />
+                <img srcset="slider-usa.jpg" alt="USA" />
+              </picture>
+              <div class="slider-text">USA</div>
             </div>
             <div class="arrow-next">
               <svg
@@ -168,14 +181,16 @@
                 <path
                   d="M14.0757 24.9325C14.4272 24.5809 14.6246 24.1041 14.6246 23.6069C14.6246 23.1097 14.4272 22.6329 14.0757 22.2813L4.7944 13L14.0757 3.71875C14.4172 3.36512 14.6062 2.89149 14.6019 2.39987C14.5976 1.90825 14.4005 1.43798 14.0528 1.09034C13.7052 0.742699 13.2349 0.545507 12.7433 0.541237C12.2517 0.536964 11.778 0.725954 11.4244 1.0675L0.817529 11.6744C0.466021 12.026 0.268555 12.5028 0.268555 13C0.268555 13.4972 0.466021 13.974 0.817529 14.3256L11.4244 24.9325C11.776 25.284 12.2528 25.4815 12.75 25.4815C13.2472 25.4815 13.724 25.284 14.0757 24.9325Z"
                   fill="#F2785C"
+                  fill-opacity="0.5"
                 />
               </svg>
             </div>
-            <div class="control-buttons">
-              <div class="circle"></div>
-              <div class="circle"></div>
-              <div class="circle"></div>
-            </div>
+          </div>
+
+          <div class="control-buttons">
+            <div class="circle"></div>
+            <div class="circle"></div>
+            <div class="circle"></div>
           </div>
         </div>
         <button class="more-button">
