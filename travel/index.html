@@ -9,6 +9,131 @@
     <link rel="icon" href="assets/favicon.ico" />
   </head>
   <body>
+    <div class="overlay"></div>
+    <div class="pop-up">
+      <div class="pop-up__container">
+        <div class="login-container">
+          <div class="pop-up__title">Log in to your account</div>
+          <button class="sign-in__btn facebook-btn">
+            <svg
+              width="24"
+              height="24"
+              viewBox="0 0 23 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M23 12.0699C23 5.71857 17.8513 0.569853 11.5 0.569853C5.14872 0.569853 0 5.71857 0 12.0699C0 17.8098 4.20538 22.5674 9.70312 23.4301V15.3941H6.7832V12.0699H9.70312V9.53626C9.70312 6.65407 11.42 5.06204 14.0468 5.06204C15.305 5.06204 16.6211 5.28665 16.6211 5.28665V8.11673H15.171C13.7424 8.11673 13.2969 9.00319 13.2969 9.91264V12.0699H16.4863L15.9765 15.3941H13.2969V23.4301C18.7946 22.5674 23 17.8098 23 12.0699Z"
+                fill="white"
+              />
+            </svg>
+            Sign In with Facebook
+          </button>
+          <button class="sign-in__btn google-btn">
+            <svg
+              width="24"
+              height="24"
+              viewBox="0 0 23 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M22.54 12.2614C22.54 11.4459 22.4668 10.6618 22.3309 9.90909H11.5V14.3575H17.6891C17.4225 15.795 16.6123 17.013 15.3943 17.8284V20.7139H19.1109C21.2855 18.7118 22.54 15.7636 22.54 12.2614Z"
+                fill="#4285F4"
+              />
+              <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M11.5 23.4998C14.605 23.4998 17.2081 22.4701 19.1109 20.7137L15.3943 17.8282C14.3645 18.5182 13.0472 18.926 11.5 18.926C8.50474 18.926 5.96951 16.903 5.06519 14.1848H1.22314V17.1644C3.11542 20.9228 7.00451 23.4998 11.5 23.4998Z"
+                fill="#34A853"
+              />
+              <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M5.06523 14.1851C4.83523 13.4951 4.70455 12.758 4.70455 12.0001C4.70455 11.2421 4.83523 10.5051 5.06523 9.81506V6.83552H1.22318C0.444318 8.38802 0 10.1444 0 12.0001C0 13.8557 0.444318 15.6121 1.22318 17.1646L5.06523 14.1851Z"
+                fill="#FBBC05"
+              />
+              <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M11.5 5.07386C13.1884 5.07386 14.7043 5.65409 15.8961 6.79364L19.1945 3.49523C17.2029 1.63955 14.5997 0.5 11.5 0.5C7.00451 0.5 3.11542 3.07705 1.22314 6.83545L5.06519 9.815C5.96951 7.09682 8.50474 5.07386 11.5 5.07386Z"
+                fill="#EA4335"
+              />
+            </svg>
+            Sign In with Google
+          </button>
+          <div class="pop_up__divider">
+            <span>or</span>
+          </div>
+          <form class="pop-up__form login-form">
+            <label for="login-email" class="input-label">E-mail</label>
+            <input type="email" id="login-email" class="pop-up__input" />
+            <label for="login-password" class="input-label">Password</label>
+            <input type="password" id="login-password" class="pop-up__input" />
+            <button type="submit" class="sign-in__btn sign-in__submit">
+              Sign In
+            </button>
+          </form>
+          <div class="forgot-btn">
+            <a href="" class="pop-up__link forgot-link"
+              >Forgot Your Password?</a
+            >
+          </div>
+          <div class="pop_up__divider"></div>
+          <div class="switch-popup">
+            Don't have an account?
+            <a class="pop-up__link register-link">Register</a>
+          </div>
+        </div>
+        <div class="signup-container signup-container__disabled">
+          <div class="pop-up__title">Create account</div>
+          <form class="pop-up__form">
+            <label for="signup-email" class="input-label">E-mail</label>
+            <input type="email" id="signup-email" class="pop-up__input" />
+            <label for="signup-password" class="input-label">Password</label>
+            <input type="password" id="signup-password" class="pop-up__input" />
+            <button type="submit" class="sign-in__btn sign-up__submit">
+              Sign Up
+            </button>
+          </form>
+          <div class="switch-popup">
+            Already have an account?
+            <a class="pop-up__link login-link">Log in</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <nav class="mobile-nav">
+      <div class="exit-button">
+        <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path
+            d="M9.17506 8L15.2501 1.925C15.3866 1.76559 15.4579 1.56052 15.4498 1.35079C15.4417 1.14106 15.3548 0.942114 15.2064 0.793702C15.0579 0.64529 14.859 0.558345 14.6493 0.550245C14.4395 0.542144 14.2345 0.613482 14.0751 0.750004L8.00006 6.825L1.92506 0.741671C1.76564 0.605149 1.56058 0.533811 1.35085 0.541912C1.14112 0.550013 0.942169 0.636956 0.793757 0.785368C0.645345 0.93378 0.558401 1.13273 0.5503 1.34246C0.542199 1.55219 0.613538 1.75725 0.75006 1.91667L6.82506 8L0.741726 14.075C0.654491 14.1497 0.583641 14.2416 0.533622 14.345C0.483602 14.4484 0.455493 14.561 0.45106 14.6758C0.446628 14.7906 0.465966 14.905 0.507861 15.0119C0.549757 15.1189 0.613305 15.216 0.694518 15.2972C0.77573 15.3784 0.872853 15.442 0.97979 15.4839C1.08673 15.5258 1.20117 15.5451 1.31594 15.5407C1.4307 15.5362 1.54331 15.5081 1.6467 15.4581C1.75009 15.4081 1.84202 15.3372 1.91673 15.25L8.00006 9.175L14.0751 15.25C14.2345 15.3865 14.4395 15.4579 14.6493 15.4498C14.859 15.4417 15.0579 15.3547 15.2064 15.2063C15.3548 15.0579 15.4417 14.8589 15.4498 14.6492C15.4579 14.4395 15.3866 14.2344 15.2501 14.075L9.17506 8Z"
+            fill="white"
+            fill-opacity="0.7"
+          />
+        </svg>
+      </div>
+      <ul class="nav-list mobile-nav-list">
+        <li class="nav-item">
+          <a class="nav-link" href="#preview">How It Works</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#steps">Plan Your Trip</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#destinations">Destinations</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#stories">Travel Stories</a>
+        </li>
+        <li class="nav-item mobile-login-btn">Account</li>
+        <li class="nav-item">
+          <a href="#footer" class="nav-link">Social Media</a>
+        </li>
+      </ul>
+    </nav>
     <header class="header">
       <div class="container header-container">
         <div class="logo">
@@ -31,49 +156,13 @@
             </li>
           </ul>
         </nav>
-        <button class="login-button">Login</button>
+        <button class="login-button login-btn">Login</button>
         <div class="menu-icon">
           <span></span>
           <span></span>
           <span></span>
         </div>
-        <nav class="mobile-nav">
-          <div class="exit-button">
-            <svg
-              viewBox="0 0 16 16"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M9.17506 8L15.2501 1.925C15.3866 1.76559 15.4579 1.56052 15.4498 1.35079C15.4417 1.14106 15.3548 0.942114 15.2064 0.793702C15.0579 0.64529 14.859 0.558345 14.6493 0.550245C14.4395 0.542144 14.2345 0.613482 14.0751 0.750004L8.00006 6.825L1.92506 0.741671C1.76564 0.605149 1.56058 0.533811 1.35085 0.541912C1.14112 0.550013 0.942169 0.636956 0.793757 0.785368C0.645345 0.93378 0.558401 1.13273 0.5503 1.34246C0.542199 1.55219 0.613538 1.75725 0.75006 1.91667L6.82506 8L0.741726 14.075C0.654491 14.1497 0.583641 14.2416 0.533622 14.345C0.483602 14.4484 0.455493 14.561 0.45106 14.6758C0.446628 14.7906 0.465966 14.905 0.507861 15.0119C0.549757 15.1189 0.613305 15.216 0.694518 15.2972C0.77573 15.3784 0.872853 15.442 0.97979 15.4839C1.08673 15.5258 1.20117 15.5451 1.31594 15.5407C1.4307 15.5362 1.54331 15.5081 1.6467 15.4581C1.75009 15.4081 1.84202 15.3372 1.91673 15.25L8.00006 9.175L14.0751 15.25C14.2345 15.3865 14.4395 15.4579 14.6493 15.4498C14.859 15.4417 15.0579 15.3547 15.2064 15.2063C15.3548 15.0579 15.4417 14.8589 15.4498 14.6492C15.4579 14.4395 15.3866 14.2344 15.2501 14.075L9.17506 8Z"
-                fill="white"
-                fill-opacity="0.7"
-              />
-            </svg>
-          </div>
-          <ul class="nav-list mobile-nav-list">
-            <li class="nav-item">
-              <a class="nav-link" href="#preview">How It Works</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#steps">Plan Your Trip</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#destinations">Destinations</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#stories">Travel Stories</a>
-            </li>
-            <li class="nav-item">
-              <a href="#" class="nav-link">Account</a>
-            </li>
-            <li class="nav-item">
-              <a href="#footer" class="nav-link">Social Media</a>
-            </li>
-          </ul>
-        </nav>
       </div>
-    <div class="mask-content"></div>
     </header>
     <main class="main">
       <section class="preview">
@@ -136,15 +225,14 @@
                   fill="#F2785C"
                 />
               </svg>
-            </div>             
+            </div>
             <div class="slider-item active">
               <picture>
                 <source
                   srcset="assets/img/mobile/slider-spain.jpg"
                   media="(max-width: 390px)"
                 />
-                <source srcset="assets/img/slider-spain.jpg" />
-                <img srcset="slider-spain.jpg" alt="Spain" />
+                <img src="assets/img/slider-spain.jpg" alt="Spain" />
               </picture>
               <div class="slider-text">Spain</div>
             </div>
@@ -154,8 +242,7 @@
                   srcset="assets/img/mobile/slider-japan.jpg"
                   media="(max-width: 390px)"
                 />
-                <source srcset="assets/img/slider-japan.jpg" />
-                <img srcset="slider-japan.jpg" alt="Japan" />
+                <img src="assets/img/slider-japan.jpg" alt="Japan" />
               </picture>
               <div class="slider-text">Japan</div>
             </div>
@@ -165,8 +252,7 @@
                   srcset="assets/img/mobile/slider-usa.jpg"
                   media="(max-width: 390px)"
                 />
-                <source srcset="assets/img/slider-usa.jpg" />
-                <img srcset="slider-usa.jpg" alt="USA" />
+                <img src="assets/img/slider-usa.jpg" alt="USA" />
               </picture>
               <div class="slider-text">USA</div>
             </div>
@@ -208,7 +294,7 @@
               fill="white"
             />
           </svg>
-          <div class="more-button-text">Find More</div>
+          <span class="more-button-text">Find More</span>
         </button>
       </section>
     </main>
@@ -224,7 +310,7 @@
                   media="(max-width: 390px)"
                 />
                 <source srcset="assets/img/thailand.jpg" />
-                <img srcset="thailand.jpg" alt="thailand" />
+                <img src="assets/img/thailand.jpg" alt="thailand" />
               </picture>
               <div class="stories-text">
                 <h3 class="stories-title">10 Photos of Attractive Thailand</h3>
@@ -248,8 +334,7 @@
                   srcset="assets/img/mobile/utah.jpg"
                   media="(max-width: 390px)"
                 />
-                <source srcset="assets/img/utah.jpg" />
-                <img srcset="utah.jpg" alt="utah" />
+                <img src="assets/img/utah.jpg" alt="utah" />
               </picture>
               <div class="stories-text">
                 <h3 class="stories-title">Canyonlands National Park, Utah</h3>
@@ -273,8 +358,7 @@
                   srcset="assets/img/mobile/mountains.jpg"
                   media="(max-width: 390px)"
                 />
-                <source srcset="assets/img/mountains.jpg" />
-                <img srcset="mountains.jpg" alt="mountains" />
+                <img src="assets/img/mountains.jpg" alt="mountains" />
               </picture>
               <div class="stories-text">
                 <h3 class="stories-title">I left my heart in the Mountains!</h3>
@@ -298,8 +382,7 @@
                   srcset="assets/img/mobile/grand-canyon.jpg"
                   media="(max-width: 390px)"
                 />
-                <source srcset="assets/img/grand-canyon.jpg" />
-                <img srcset="grand-canyon.jpg" alt="grand canyon" />
+                <img src="assets/img/grand-canyon.jpg" alt="grand canyon" />
               </picture>
               <div class="stories-text">
                 <h3 class="stories-title">The Longest journey in my life!</h3>
@@ -333,7 +416,7 @@
                 fill="white"
               />
             </svg>
-            <div class="more-button-text">See More</div>
+            <span class="more-button-text">See More</span>
           </button>
         </div>
       </section>
@@ -341,16 +424,24 @@
         <div class="container footer-container">
           <ul class="social-media rs-links">
             <li class="footer-element">
-                <a class="" href="https://rs.school/js/" target="_blank">
-                    <img class="footer-icons" src="assets/svg/rs_school_js.svg" alt="rs-school logo">
-                </a>
+              <a class="" href="https://rs.school/js/" target="_blank">
+                <img
+                  class="footer-icons"
+                  src="assets/svg/rs_school_js.svg"
+                  alt="rs-school logo"
+                />
+              </a>
             </li>
             <li class="footer-element">
-                <a href="https://github.com/anisimova-elena/" target="_blank">
-                    <img class="footer-icons" src="assets/svg/github-icon.svg" alt="github logo">
-                </a>
+              <a href="https://github.com/anisimova-elena/" target="_blank">
+                <img
+                  class="footer-icons"
+                  src="assets/svg/github-icon.svg"
+                  alt="github logo"
+                />
+              </a>
             </li>
-        </ul>
+          </ul>
           <span>All Rights Reserved © Travel Portal</span>
           <ul class="social-media">
             <li class="footer-element">
@@ -393,6 +484,5 @@
       </footer>
     </div>
     <script src="index.js"></script>
-    
   </body>
 </html>
