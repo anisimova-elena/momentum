@@ -87,3 +87,85 @@ anchors.forEach(anchor => {
         })
     })    
 })
+
+let slider_items = document.querySelectorAll('.slider-item');
+let slider_list = document.querySelector('.slider-wrapper');
+let control_buttons = document.querySelectorAll('.circle');
+let currentItem = 1;
+let isEnabled = true;
+
+function changeCurrentItem(n) {
+    currentItem = (n + slider_items.length) % slider_items.length;
+}
+
+function hideItem(direction) {
+    isEnabled = false;
+    slider_items[currentItem].classList.add(direction);
+    control_buttons[currentItem].classList.remove('active');
+    slider_items[currentItem].addEventListener('animationend', function() {
+        this.classList.remove('active', direction);
+    });
+}
+function showItem(direction) {
+    slider_items[currentItem].classList.add('next', direction);
+    slider_items[currentItem].addEventListener('animationend', function() {
+        this.classList.remove('next', direction);
+        this.classList.add('active');
+        control_buttons[currentItem].classList.add('active');
+        isEnabled = true;
+    })
+}
+function previousItem(n) {
+    hideItem('to-right');
+    changeCurrentItem(n-1); 
+    showItem('from-left');
+}
+function nextItem(n) {
+    hideItem('to-left');
+    changeCurrentItem(n + 1);
+    showItem('from-right');
+}
+document.querySelector('.arrow-back').addEventListener('click', function() {
+    if (isEnabled) {
+        previousItem (currentItem);
+    }
+})
+document.querySelector('.arrow-next').addEventListener('click', function() {
+    if (isEnabled) {
+        nextItem (currentItem);
+    }
+})
+function toPrev() {
+    slider_list.classList.remove("to-next");
+    control_buttons[0].classList.add('active');
+    control_buttons[1].classList.remove('active');
+    control_buttons[2].classList.remove('active');
+    slider_list.classList.add("to-prev");
+}
+function toCenter() {
+    slider_list.classList.remove("to-next");
+    control_buttons[1].classList.add('active');
+    control_buttons[0].classList.remove('active');
+    control_buttons[2].classList.remove('active');
+    slider_list.classList.remove("to-prev");
+}
+function toNext() {
+    slider_list.classList.remove("to-prev");
+    control_buttons[2].classList.add('active');
+    control_buttons[0].classList.remove('active');
+    control_buttons[1].classList.remove('active');
+    slider_list.classList.add("to-next");
+}
+document.querySelector('.slider-item:first-child').addEventListener('click', function() { toPrev() });
+document.querySelector('.slider-item:nth-child(2)').addEventListener('click', function() { toCenter() });
+document.querySelector('.slider-item:last-child').addEventListener('click', function() { toNext() });
+
+document.querySelectorAll('.circle').forEach((item, index, array) => {
+    item.addEventListener('click', event => {
+        switch(index) {
+            case 0: toPrev(); break;
+            case 1: toCenter(); break;
+            case 2: toNext(); break;
+        }
+    })
+  })
