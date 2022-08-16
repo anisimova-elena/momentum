@@ -1,6 +1,7 @@
 //const name = document.querySelector(".name");
 let images = [];
 let currentItem = 0;
+const body = document.querySelector("body");
 
 export async function getImagesFromAPI(times_of_day) {
   let query = "nature" + "%20" + times_of_day;
@@ -16,7 +17,7 @@ export async function getImagesFromAPI(times_of_day) {
     }
     const img = new Image();
     img.src =  images[0]// здесь ваш код 
-    img.onload = () => { body.style.backgroundImage = images[0] }
+    img.onload = () => { body.style.backgroundImage = images[0]; }
     for (let i = 1; i < 20; i++) {
         const img = new Image();
         img.src = images[i];
