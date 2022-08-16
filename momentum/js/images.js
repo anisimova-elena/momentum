@@ -14,7 +14,10 @@ export async function getImagesFromAPI(times_of_day) {
     for (let i in json) {
       images.push(json[i].urls.full);
     }
-    for (let i in images) {
+    const img = new Image();
+    img.src =  images[0]// здесь ваш код 
+    img.onload = () => { body.style.backgroundImage = images[0] }
+    for (let i = 1; i < 20; i++) {
         const img = new Image();
         img.src = images[i];
     }
@@ -33,7 +36,6 @@ function changeCurrentItem(n) {
 document.querySelector(".slide-prev").addEventListener("click", function (e) {
   changeCurrentItem(currentItem - 1);
   e.classList.add('slide-active');
-  //setTimeout(e.classList.remove('slide-active'), 10000) ;
 });
 document.querySelector(".slide-next").addEventListener("click", function () {
   changeCurrentItem(currentItem + 1);
