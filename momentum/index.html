@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="assets/favicon.ico" rel="shortcut icon" />
+    <link rel="stylesheet" href="css/owfont-regular.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <title>momentum</title>
+  </head>
+  <body>
+    <header class="header">
+      <div class="player">
+        <div class="player-controls">
+          <button class="play-prev player-icon"></button>
+          <button class="play player-icon"></button>
+          <button class="play-next player-icon"></button>
+        </div>
+        <ul class="play-list"></ul>
+      </div>
+      <div class="weather">
+        <input type="text" class="city" />
+        <i class="weather-icon owf"></i>
+        <div class="weather-error"></div>
+        <div class="description-container">
+          <span class="temperature"></span>
+          <span class="weather-description"></span>
+        </div>
+        <div class="wind"></div>
+        <div class="humidity"></div>
+      </div>
+    </header>
+    <main class="main">
+      <div class="slider-icons">
+        <button class="slide-prev slider-icon"></button>
+        <button class="slide-next slider-icon"></button>
+      </div>
+      <time class="time"></time>
+      <date class="date-of-the-week"></date>
+      <div class="greeting-container">
+        <span class="greeting"></span>
+        <input type="text" class="name" placeholder="[Enter name]"/>
+      </div>
+    </main>
+    <footer class="footer">
+      <button class="change-quote">
+      </button>
+      <div class="quote">
+        <div class="quote-text">
+          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ex nesciunt
+          neque dolorem animi aperiam, quae quasi distinctio provident sint quam
+          repudiandae quo cupiditate alias eligendi error laboriosam voluptate
+          voluptatibus corporis.</div>
+        <div class="author">John Lenogtn</div>
+      </div>
+      <ul class="social-media">
+        <li class="footer-element">
+          <a
+            class=""
+            href="https://github.com/anisimova-elena/"
+            target="_blank"
+          >
+            <img
+              class="footer-icons"
+              src="assets/svg/github-icon.svg"
+              alt="instagram logo"
+            />
+          </a>
+        </li>
+        <li class="footer-element">
+          <b>August, 2022
+        </li>
+        <li class="footer-element">
+          <a class="" href="https://rs.school/js/" target="_blank">
+            <img
+              class="footer-icons"
+              src="assets/svg/rs_school_js.svg"
+              alt="youtube logo"
+            />
+          </a>
+        </li>
+      </ul>
+    </footer>
+    <script type="module" src="js/index.js"></script>
+  </body>
+</html>
