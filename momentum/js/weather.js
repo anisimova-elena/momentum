@@ -6,6 +6,7 @@ const temperature = document.querySelector('.temperature');
 const weatherDescription = document.querySelector('.weather-description');
 const wind = document.querySelector('.wind');
 const humidity = document.querySelector('.humidity');
+const weatherError = document.querySelector('.weather-error');
 
 export function setLocalCity() {
   localStorage.setItem("city", city.value);
@@ -34,6 +35,12 @@ export async function getWeather() {
     humidity.textContent = `Humidity: ${data.main.humidity}%`
   }
   else {
+    weatherError.textContent = "City not found";
+    weatherIcon.classList.remove('weather-icon owf');
+    temperature.textContent = "";
+    weatherDescription.textContent = "";
+    wind.textContent = "";
+    humidity.textContent = "";
     console.log("Ошибка HTTP: "+ response.status);
   }
 }
