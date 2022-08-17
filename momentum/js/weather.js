@@ -27,6 +27,7 @@ export async function getWeather() {
 
   if (response.ok) {
     let data = await response.json();
+    weatherError.textContent = "";
     weatherIcon.className = 'weather-icon owf';
     weatherIcon.classList.add(`owf-${data.weather[0].id}`);
     temperature.textContent = `${data.main.temp}°C`;

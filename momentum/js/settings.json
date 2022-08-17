@@ -1,0 +1,11 @@
+{
+    "api-background": "true",
+    "unsplash-api": "true",
+    "flickr-api": "false",
+    "tags": "",
+    "player" : "true",
+    "time": "true",
+    "weather": "true",
+    "quotes": "true",
+    "greetings": "true"
+}
