@@ -30,7 +30,6 @@ export function showTime() {
   showDate(date);
   
   times_of_day = showGreeting(date);
-  //console.log(times_of_day);
   setTimeout(showTime, 1000);
 }
 export default times_of_day;

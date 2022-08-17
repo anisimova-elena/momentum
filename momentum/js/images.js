@@ -11,7 +11,6 @@ export async function getImagesFromAPI(times_of_day) {
 
   if (response.ok) {
     let json = await response.json();
-    console.log(json);
     for (let i in json) {
       images.push(json[i].urls.full);
     }
@@ -28,8 +27,6 @@ export async function getImagesFromAPI(times_of_day) {
   }
 }
 function changeCurrentItem(n) {
-  console.log("Background - item");
-  console.log(currentItem);
   currentItem = (n + 20) % 20;
   document.body.style.background =
     "url('" + images[currentItem] + "') center / cover";
