@@ -26,7 +26,7 @@ export async function getImagesFromAPI(query) {
 }
 function changeCurrentItem(n) {
   currentItem = (n + 20) % 20;
-  document.body.style.background = "url('" + img[currentItem].src + "')";
+  body.style.backgroundImage = "url('" + img[currentItem].src + "')";
 }
 document.querySelector(".slide-prev").addEventListener("click", function (e) {
   changeCurrentItem(currentItem - 1);
