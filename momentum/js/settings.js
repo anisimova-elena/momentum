@@ -186,7 +186,7 @@ export function useSettings() {
     settingGreeting.classList.remove("option-active");
     greeting.classList.add("hidden");
   }
-  if (getLocalSettings("photos") == "github") {
+  if ((getLocalSettings("photos") == "github") || (getLocalSettings("photos") == null)) {
     images.getImagesFromGitHub(date.times_of_day);
     photosGitHub.classList.add("option-active");
     photosUnsplash.classList.remove("option-active");

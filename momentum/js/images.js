@@ -25,7 +25,9 @@ export async function getImagesFromAPI(query) {
   }
 }
 function changeCurrentItem(n) {
-  currentItem = (n + 20) % 20;
+ if (n > 20) { currentItem = 1; }
+ else if (n < 1) { currentItem = 20; }
+ else currentItem = n;
   body.style.backgroundImage = "url('" + img[currentItem].src + "')";
 }
 document.querySelector(".slide-prev").addEventListener("click", function (e) {

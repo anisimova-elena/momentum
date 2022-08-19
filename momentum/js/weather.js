@@ -32,6 +32,10 @@ export async function getWeather() {
     let data = await response.json();
     weatherError.textContent = "";
     weatherIcon.className = 'weather-icon owf';
+    temperature.classList.remove("hidden");
+    weatherDescription.classList.remove("hidden");
+    wind.classList.remove("hidden");
+    humidity.classList.remove("hidden");
     weatherIcon.classList.add(`owf-${data.weather[0].id}`);
     temperature.textContent = `${Math.ceil(data.main.temp)}°C`;
     weatherDescription.textContent = data.weather[0].description;
@@ -40,11 +44,11 @@ export async function getWeather() {
   }
   else {
     weatherError.textContent = "City not found";
-    weatherIcon.classList.remove('weather-icon owf');
-    temperature.textContent = " ";
-    weatherDescription.textContent = " ";
-    wind.textContent = " ";
-    humidity.textContent = " ";
+    weatherIcon.classList.add("hidden");
+    temperature.classList.add("hidden");
+    weatherDescription.classList.add("hidden");
+    wind.classList.add("hidden");
+    humidity.classList.add("hidden");
     console.log("Ошибка HTTP: "+ response.status);
   }
 }
