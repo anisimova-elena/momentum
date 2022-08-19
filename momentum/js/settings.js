@@ -199,8 +199,8 @@ export function useSettings() {
   if (localStorage.getItem("tags") == null) {
     console.log("tags =  null");
     setLocalSettings("tags", "nature" + "," + date_time.times_of_day);
-    tags.value ="nature" + "," + date_time.times_of_day;
-  } else tags.value = getLocalSettings("tags");
+    tags.value = queryTags = "nature" + "," + date_time.times_of_day;
+  } else tags.value = queryTags = getLocalSettings("tags");
 
   if (localStorage.getItem("photos") == "github" || localStorage.getItem("photos") == null) {
     images.getImagesFromGitHub(date_time.times_of_day);
@@ -213,6 +213,5 @@ export function useSettings() {
        else if (getLocalSettings("photos") == "flickr") {
           images.getImagesFromFlickr(queryTags);
           photosFlickr.classList.add("option-active");
-          settingTags.classList.remove("hidden");
        }
 }
