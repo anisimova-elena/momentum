@@ -1,13 +1,13 @@
 const name = document.querySelector(".name");
 
-export function setLocalStorage() {
+export function setLocalStorageName() {
   localStorage.setItem("name", name.value);
 }
-window.addEventListener("beforeunload", setLocalStorage);
+window.addEventListener("beforeunload", setLocalStorageName);
 
-export function getLocalStorage() {
+export function getLocalStorageName() {
   if (localStorage.getItem("name")) {
     name.value = localStorage.getItem("name");
   }
 }
-window.addEventListener("load", getLocalStorage);
+window.addEventListener("load", getLocalStorageName);

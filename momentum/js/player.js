@@ -1,5 +1,5 @@
 import playList from './playList.js';
-const audio = new Audio("../assets/sounds/Aqua Caelestis.mp3");
+const audio = new Audio("./assets/sounds/AquaCaelestis.mp3");
 const playerButton = document.querySelector(".play-button");
 const playNext = document.querySelector(".play-next");
 const playPrev = document.querySelector(".play-prev");

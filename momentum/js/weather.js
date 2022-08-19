@@ -17,6 +17,9 @@ export function getLocalCity() {
   if (localStorage.getItem("city")) {
     city.value = localStorage.getItem("city");
   }
+  else { city.value = "Minsk";
+    localStorage.setItem("city", "Minsk");
+  }
 }
 
 
@@ -30,18 +33,18 @@ export async function getWeather() {
     weatherError.textContent = "";
     weatherIcon.className = 'weather-icon owf';
     weatherIcon.classList.add(`owf-${data.weather[0].id}`);
-    temperature.textContent = `${data.main.temp}°C`;
+    temperature.textContent = `${Math.ceil(data.main.temp)}°C`;
     weatherDescription.textContent = data.weather[0].description;
-    wind.textContent = `Wind speed: ${data.wind.speed} m/s`;
-    humidity.textContent = `Humidity: ${data.main.humidity}%`
+    wind.textContent = `Wind speed: ${Math.ceil(data.wind.speed)} m/s`;
+    humidity.textContent = `Humidity: ${Math.ceil(data.main.humidity)}%`
   }
   else {
     weatherError.textContent = "City not found";
     weatherIcon.classList.remove('weather-icon owf');
-    temperature.textContent = "";
-    weatherDescription.textContent = "";
-    wind.textContent = "";
-    humidity.textContent = "";
+    temperature.textContent = " ";
+    weatherDescription.textContent = " ";
+    wind.textContent = " ";
+    humidity.textContent = " ";
     console.log("Ошибка HTTP: "+ response.status);
   }
 }
