@@ -2,6 +2,8 @@ const time = document.querySelector(".time");
 const date_of_the_week = document.querySelector(".date-of-the-week");
 const greeting = document.querySelector(".greeting");
 export let times_of_day;
+let date = new Date();
+let currentTime;
 
 export function showDate(date) {
   const options = {
@@ -23,14 +25,12 @@ export function showGreeting(date) {
   }
 }
 export function showTime() {
-  
-  const date = new Date();
-  const currentTime = date.toLocaleTimeString();
+  date = new Date();
+  currentTime = date.toLocaleTimeString();
   time.textContent = currentTime;
   showDate(date);
   
   times_of_day = showGreeting(date);
   setTimeout(showTime, 1000);
 }
-export default times_of_day;
 //export default showTime();

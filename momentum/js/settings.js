@@ -1,22 +1,15 @@
 import * as images from "./images.js";
-import * as date from "./time.js";
-/* Show/Hide settings */
-const settings = document.querySelector(".settings-button");
-const settingsWindow = document.querySelector(".settings-window");
-settings.addEventListener("click", () => {
-  settingsWindow.classList.toggle("hidden");
-});
-let query;
-
-const settingsExitBtn = document.querySelector(".settings-exit-button");
-settingsExitBtn.addEventListener("click", () => {
-  settingsWindow.classList.toggle("hidden");
-});
+import * as date_time from "./time.js";
+import * as m from './k.js';
+m.left();
+console.log("meme = ", m.meme);
+date_time.showTime();
 
 export function setLocalSettings(settingsName, settingsValue) {
   localStorage.setItem(settingsName, settingsValue);
 }
-window.addEventListener("beforeunload", setLocalSettings);
+console.log("date_time.times_of_day = ", date_time.times_of_day);
+let queryTags = "nature" + "," + date_time.times_of_day;
 
 export function getLocalSettings(settingsName) {
   let setting = localStorage.getItem(settingsName);
@@ -24,6 +17,20 @@ export function getLocalSettings(settingsName) {
     return setting;
   }
 }
+
+/* Show/Hide settings-window */
+const settings = document.querySelector(".settings-button");
+const settingsWindow = document.querySelector(".settings-window");
+
+settings.addEventListener("click", () => {
+  settingsWindow.classList.toggle("hidden");
+});
+
+const settingsExitBtn = document.querySelector(".settings-exit-button");
+settingsExitBtn.addEventListener("click", () => {
+  settingsWindow.classList.toggle("hidden");
+});
+
 
 /*Show/Hide settings section */
 let settingsSection = "interface";
@@ -69,13 +76,6 @@ settingsInterface.addEventListener("click", () => {
 });
 const tags = document.querySelector(".input-tags");
 
-tags.addEventListener("change", () => {
-  if (tags.value.length == 0) {
-    tags.value = "nature" + "," + date.times_of_day;
-  }
-  images.getImagesFromAPI(tags.value);
-  setLocalSettings("tags", tags.value);
-});
 
 const quote = document.querySelector(".quote");
 const settingQuote = document.querySelector(".setting-quote");
@@ -90,6 +90,7 @@ const settingGreeting = document.querySelector(".setting-greeting");
 const photosGitHub = document.querySelector(".git-hub_photos");
 const photosUnsplash = document.querySelector(".unsplash_photos");
 const settingTags = document.querySelector(".setting-tags");
+const photosFlickr = document.querySelector(".flickr_photos ");
 
 settingQuote.addEventListener("click", function () {
   settingQuote.classList.toggle("option-active");
@@ -117,19 +118,28 @@ photosGitHub.addEventListener("click", () => {
   photosGitHub.classList.add("option-active");
   photosUnsplash.classList.remove("option-active");
   settingTags.classList.add("hidden");
-  images.getImagesFromGitHub(date.times_of_day);
+  images.getImagesFromGitHub(date_time.times_of_day);
 });
 
 photosUnsplash.addEventListener("click", () => {
   photosUnsplash.classList.add("option-active");
   photosGitHub.classList.remove("option-active");
+  photosFlickr.classList.remove("option-active");
   settingTags.classList.remove("hidden");
-  if (getLocalSettings("tags") == null) {
-    query = "nature" + "," + date.times_of_day;
-  } else query = getLocalSettings("tags");
-  tags.value = query;
-  images.getImagesFromAPI(query);
-  
+  images.getImagesFromUnsplash(queryTags);
+});
+
+photosFlickr.addEventListener("click", () => {
+  photosFlickr.classList.add("option-active");  
+  photosGitHub.classList.remove("option-active");
+  photosUnsplash.classList.remove("option-active");
+  settingTags.classList.remove("hidden");
+  images.getImagesFromFlickr(queryTags);
+});
+
+tags.addEventListener("change", () => {
+  if (tags.value.length == 0) { tags.value = queryTags = "nature" + "," + date_time.times_of_day; }
+  else queryTags = tags.value;
 });
 
 export function saveSettings() {
@@ -163,42 +173,46 @@ export function saveSettings() {
   } else if (photosUnsplash.classList.contains("option-active")) {
     setLocalSettings("photos", "unsplash");
   }
-  setLocalSettings("tags", tags.value);
+  setLocalSettings("tags", queryTags);
 }
 export function useSettings() {
-  if (getLocalSettings("quote") == "false") {
+  if (localStorage.getItem("quote") == "false") {
     settingQuote.classList.remove("option-active");
     quote.classList.add("hidden");
   }
-  if (getLocalSettings("player") == "false") {
+  if (localStorage.getItem("player") == "false") {
     settingPlayer.classList.remove("option-active");
     player.classList.add("hidden");
   }
-  if (getLocalSettings("time") == "false") {
+  if (localStorage.getItem("time") == "false") {
     settingTime.classList.remove("option-active");
     time.classList.add("hidden");
   }
-  if (getLocalSettings("weather") == "false") {
+  if (localStorage.getItem("weather") == "false") {
     settingWeather.classList.remove("option-active");
     weather.classList.add("hidden");
   }
-  if (getLocalSettings("greeting") == "false") {
+  if (localStorage.getItem("greeting") == "false") {
     settingGreeting.classList.remove("option-active");
     greeting.classList.add("hidden");
   }
-  if ((getLocalSettings("photos") == "github") || (getLocalSettings("photos") == null)) {
-    images.getImagesFromGitHub(date.times_of_day);
+  if (localStorage.getItem("tags") == null) {
+    console.log("tags =  null");
+    setLocalSettings("tags", "nature" + "," + date_time.times_of_day);
+    tags.value ="nature" + "," + date_time.times_of_day;
+  } else tags.value = getLocalSettings("tags");
+
+  if (localStorage.getItem("photos") == "github" || localStorage.getItem("photos") == null) {
+    images.getImagesFromGitHub(date_time.times_of_day);
     photosGitHub.classList.add("option-active");
-    photosUnsplash.classList.remove("option-active");
     settingTags.classList.add("hidden");
-  } else if (getLocalSettings("photos") == "unsplash") {
-    if (getLocalSettings("tags") != null) {
-      tags.value = getLocalSettings("tags");
-      images.getImagesFromAPI(tags.value);
-    }
-    else images.getImagesFromAPI(date.times_of_day);
-    photosUnsplash.classList.add("option-active");
-    photosGitHub.classList.remove("option-active");
-    settingTags.classList.remove("hidden");
-  }
+  } else if (getLocalSettings("photos") == "unsplash") { 
+          images.getImagesFromUnsplash(queryTags);
+          photosUnsplash.classList.add("option-active");
+        }
+       else if (getLocalSettings("photos") == "flickr") {
+          images.getImagesFromFlickr(queryTags);
+          photosFlickr.classList.add("option-active");
+          settingTags.classList.remove("hidden");
+       }
 }
