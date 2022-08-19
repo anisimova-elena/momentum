@@ -1,8 +1,8 @@
 import * as images from "./images.js";
 import * as date_time from "./time.js";
-import * as m from './k.js';
-m.left();
-console.log("meme = ", m.meme);
+//import * as m from './k.js';
+//m.left();
+//console.log("meme = ", m.meme);
 date_time.showTime();
 
 export function setLocalSettings(settingsName, settingsValue) {

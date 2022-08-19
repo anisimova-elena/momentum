@@ -2,8 +2,8 @@
 
 import * as images from './images.js';
 import * as date from './time.js';
-import * as m from './k.js';
-m.left();
+//import * as m from './k.js';
+//m.left();
 
 date.showTime();
 //images.getImagesFromAPI(query);
